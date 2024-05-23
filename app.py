@@ -1,9 +1,9 @@
 import streamlit as st
-import pickle
+import joblib
 
 # Load the trained model
-with open('lrmodel.pckl', 'rb') as lrfile:
-    pipe_lr = pickle.load(lrfile)
+model_path = 'lrmodel.pkl'  # Ensure the correct path to the model file
+pipe_lr = joblib.load(model_path)
 
 # Title and description in the main section
 st.markdown('<h1 style="color: #017bff;">Language Identification Application</h1>', unsafe_allow_html=True)
